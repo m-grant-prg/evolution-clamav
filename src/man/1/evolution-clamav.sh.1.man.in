@@ -1,0 +1,36 @@
+NAME
+evolution-clamav.sh - Scan incoming mail in evolution with clamav in the
+foregrond
+SYNOPSIS
+evolution-clamav.sh [OPTION]
+DESCRIPTION
+The script is designed to be a filter in evolution getting input on stdin and
+using clamav in the foreground to scan for viruses.
+OPTIONS
+-h, --help  prints usage information.
+
+-V, --version  prints version information
+EXIT STATUS
+0 - Success
+
+1 - General failure
+
+64 - Error in command line
+
+AUTHOR
+Written by Mark Grant.
+REPORTING BUGS
+Report bugs to <m.grant.prg@gmail.com>
+COPYRIGHT
+Copyright (C) 2020 Mark Grant.
+.br
+License GPLv3+: GNU GPL version 3 or later
+.br
+<http://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+.br
+There is NO WARRANTY, to the extent permitted by law.
+SEE ALSO
+evolution-clamavd.sh clamscan-notify.sh
+
