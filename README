@@ -1,0 +1,49 @@
+=============================
+ClamAV for Evolution - README
+=============================
+
+Date:	Sun Jan 9, 2011
+Author:	Christian Brenner <christian.brenner@ymail.com>
+
+Abstract
+--------
+
+	ClamAV for Evolution is a Bash script that enables Evolution to let incoming
+	mails be scanned by ClamAV.
+
+Perquisites
+-----------
+
+	- Bash (4.1.9 or above)
+	- ClamAV (0.96.5 or above)
+	- Evolution (2.28.2 or above)
+	- libnotify (0.4.4 or above)
+
+	This script was tested with above versions. It may function with older
+	versions. It was developed/tested on Novell SUSE Linux Enterprise 11 SP1.
+
+Installation
+------------
+
+	1)	Copy the script to /home/<foo>/.evolution (or any other folder)
+	2)	Open Evolution
+	3)	Go to "Edit" > "Message Filters"
+	4)	Click "Add"
+	5)	Apply following settings:
+
+		5.1) Rule Name: ClamAV (or anything else)		
+		5.2) Click "Add Condition"
+		5.3) Select "Pipe to Program"
+		5.4) Select the clamav_evolution.sh file
+		5.5) Select "does not return"
+		5.6) Enter "0"
+		5.7) Click "Add Action"
+		5.8) Choose "Delete"
+
+	6)	Click "OK"
+
+Credits
+-------
+
+	Copyright (c) 2011 Christian Brenner. All rights reserved.
+	Copyright (c) Fred Blaise. All rights reserved.
