@@ -15,8 +15,8 @@
 #	   Major rework.						#
 #	   Copyright (C) 2020  Mark Grant				#
 #									#
-# Released under the GPLv3 only.					#
-# SPDX-License-Identifier: GPL-3.0					#
+# Released under the GPLv3 or later.					#
+# SPDX-License-Identifier: GPL-3.0-or-later				#
 #									#
 # Purpose:								#
 # To simplify the AutoTools distribution build.				#
