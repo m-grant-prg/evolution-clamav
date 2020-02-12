@@ -9,7 +9,11 @@
 #########################################################################
 #									#
 # Script ID: clamscan-notify.sh						#
-# Author: Copyright (C) 2020  Mark Grant				#
+# Authors: Original script.						#
+#	   Copyright (c) Fred Blaise.					#
+#	   Copyright (c) 2011 Christian Brenner.			#
+#	   Major rework.						#
+#	   Copyright (C) 2020  Mark Grant				#
 #									#
 # Released under the GPLv3 only.					#
 # SPDX-License-Identifier: GPL-3.0					#
