@@ -1,49 +1,134 @@
-=============================
-ClamAV for Evolution - README
-=============================
+--------------------------------------------------------
+Filters to scan incoming email in Evolution using ClamAV
+========================================================
 
-Date:	Sun Jan 9, 2011
-Author:	Christian Brenner <christian.brenner@ymail.com>
+Authors:-
 
-Abstract
+Copyright (C) 2011 Christian Brenner
+
+Copyright (C) 2020 Mark Grant
+
 --------
+Contents
+========
 
-	ClamAV for Evolution is a Bash script that enables Evolution to let incoming
-	mails be scanned by ClamAV.
+1 ... Project Description
 
-Perquisites
------------
+2 ... AutoTools (configure and make) Installation
 
-	- Bash (4.1.9 or above)
-	- ClamAV (0.96.5 or above)
-	- Evolution (2.28.2 or above)
-	- libnotify (0.4.4 or above)
+3 ... Installation of Distro-Native Packages
 
-	This script was tested with above versions. It may function with older
-	versions. It was developed/tested on Novell SUSE Linux Enterprise 11 SP1.
+4 ... Utility Scripts
 
-Installation
+
+
+-------------------------
+1 ... Project Description
+=========================
+
+The project consists of bash scripts which can be used as filters to scan
+incoming mail with ClamAV in Evolution. There is a script which scans the mail
+in the foreground and one that utilises the ClamAV daemon.
+
+N.B.
+----
+At a source modification / development level, this project expects to reside in
+a git environment. This manifests itself in 2 places:-
+1) ... .gitignore files are included in the source.
+2) ... The make target, 'srctarball', relies on the command 'git am' so it will
+	fail if git is not installed or it is not in a git repository.
+
+
+-------------------------------------------------
+2 ... AutoTools (configure and make) Installation
+=================================================
+
+a) ... Download either the source or distribution tarball (the .tar.gz file)
+	from:-
+
+https://github.com/m-grant-prg/evolution-clamav/releases
+
+b) ... Extract the tarball preserving the directory structure.
+
+c) ... cd to the directory created.
+
+d) ... If you downloaded the source tarball type 'autoreconf -if'
+
+e) ... Type './configure'
+
+f) ... As root or sudo, type 'make install clean'
+
+g) ... Determine where the scripts have been installed. This will almost
+certainly be /usr/local/bin but can be discovered by typing
+'which evolution-clamav.sh'
+
+h) ... Open Evolution
+
+i) ... Go to "Edit" > "Message Filters"
+
+j) ... Click "Add"
+
+k) ... Apply following settings:
+
+		k.1) Rule Name: ClamAV (or anything else)
+		k.2) Click "Add Condition"
+		k.3) Select "Pipe to Program"
+		k.4) Then using the location determined in g), either:
+			Select the evolution-clamav.sh file for foreground
+			scanning
+			or
+			Select the evolution-clamavd.sh file to use the daemon
+		k.5) Select "does not return"
+		k.6) Enter "0"
+		k.7) Click "Add Action"
+		k.8) Choose "Delete"
+
+l) ... Click "OK"
+
+(Quote marks are for textual clarity only).
+
+
+To uninstall the package:
+
+1 ... cd to the directory created in the above install process.
+
+2 ... As root or sudo, type 'make uninstall clean'
+
+
+--------------------------------------------
+3 ... Installation of Distro-Native Packages
+============================================
+Installation packages native to different distributions are available, please
+refer to the relevant installation section on the wiki at:-
+
+https://github.com/m-grant-prg/evolution-clamav/wiki
+
+
+---------------------
+4 ... Utility Scripts
+=====================
+In the project root directory there is 1 helper script; bootstrap.sh.
+
+bootstrap.sh
 ------------
+This misleadingly named script bootstraps the project build and provides other
+useful features. The main options below are probably b, c, C, D and T.
 
-	1)	Copy the script to /home/<foo>/.evolution (or any other folder)
-	2)	Open Evolution
-	3)	Go to "Edit" > "Message Filters"
-	4)	Click "Add"
-	5)	Apply following settings:
+In AutoTools it is usually advisable to perform parallel builds. This means you
+build somewhere other than the project root. This is because building creates
+files and they would confuse the project root downwards. I always create a build
+directory straight off the project root, cd to there and do all build and git
+work from there, (.gitignore is already set to ignore such a directory).
 
-		5.1) Rule Name: ClamAV (or anything else)		
-		5.2) Click "Add Condition"
-		5.3) Select "Pipe to Program"
-		5.4) Select the clamav_evolution.sh file
-		5.5) Select "does not return"
-		5.6) Enter "0"
-		5.7) Click "Add Action"
-		5.8) Choose "Delete"
+Assuming you adopt the preceding paragraph then a typical invocation of the
+script would be:-
 
-	6)	Click "OK"
+../bootstrap.sh --config --build ..
 
-Credits
--------
+The last '..' points the way to project root.
 
-	Copyright (c) 2011 Christian Brenner. All rights reserved.
-	Copyright (c) Fred Blaise. All rights reserved.
+For the full list of arguments to bootstrap.sh, please refer to the options
+section of the acmbuild wiki, the options are identical:-
+
+https://github.com/m-grant-prg/acmbuild/wiki
+
