@@ -11,8 +11,8 @@
 # Script ID: evolution-clamav.sh					#
 # Author: Copyright (C) 2020  Mark Grant				#
 #									#
-# Released under the GPLv3 only.					#
-# SPDX-License-Identifier: GPL-3.0					#
+# Released under the GPLv3 or later.					#
+# SPDX-License-Identifier: GPL-3.0-or-later				#
 #									#
 # Purpose:								#
 # To use as an Evolution filter to scan incoming mail using clamscan.	#

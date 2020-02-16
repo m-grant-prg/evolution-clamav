@@ -3,8 +3,8 @@
 # Script ID: ./configure.ac						#
 # Author: Copyright (C) 2020  Mark Grant				#
 #									#
-# Released under the GPLv3 only.					#
-# SPDX-License-Identifier: GPL-3.0					#
+# Released under the GPLv3 or later.					#
+# SPDX-License-Identifier: GPL-3.0-or-later				#
 #									#
 # Purpose:								#
 # Autoconfigure script file to configure evolution-clamav project.	#
