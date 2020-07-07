@@ -1,7 +1,7 @@
 #########################################################################
 #									#
 # File ID: ./.travis.yml						#
-# Author: Copyright (C) 2020  Mark Grant				#
+# Author: Copyright (C) 2020, 2020  Mark Grant				#
 #									#
 # Released under the GPLv3 only.					#
 # SPDX-License-Identifier: GPL-3.0					#
@@ -17,11 +17,16 @@
 # Date		Author	Version	Description				#
 #									#
 # 11/02/2020	MG	1.0.1	Initial release.                        #
+# 07/07/2020    MG      1.0.2   Bionic is now the minimum distribution  #
+#                               due to dependencies built on LaunchPad. #
 #									#
 #########################################################################
 
 
 language: bash
+
+dist:
+    - bionic
 
 before_install:
     - sudo add-apt-repository ppa:m-grant-prg/utils -y
