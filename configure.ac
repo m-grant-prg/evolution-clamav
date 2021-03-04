@@ -1,7 +1,7 @@
 #########################################################################
 #									#
 # Script ID: ./configure.ac						#
-# Author: Copyright (C) 2020  Mark Grant				#
+# Author: Copyright (C) 2020, 2021  Mark Grant				#
 #									#
 # Released under the GPLv3 or later.					#
 # SPDX-License-Identifier: GPL-3.0-or-later				#
@@ -62,7 +62,7 @@ AC_PREREQ([2.69])
 # can be used by ac output and / or the sed setup below to substitute bookmarks
 # in source files.
 #
-AC_INIT(ClamAV Scanning For Evolution, 1.0.1,
+AC_INIT(ClamAV Scanning For Evolution, 1.0.1+rc1,
 	m.grant.prg@gmail.com, evolution-clamav)
 
 AC_MSG_NOTICE(initialisation and setup)
