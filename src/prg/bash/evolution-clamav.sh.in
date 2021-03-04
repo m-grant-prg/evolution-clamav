@@ -9,7 +9,7 @@
 #########################################################################
 #									#
 # Script ID: evolution-clamav.sh					#
-# Author: Copyright (C) 2020  Mark Grant				#
+# Author: Copyright (C) 2020, 2021  Mark Grant				#
 #									#
 # Released under the GPLv3 or later.					#
 # SPDX-License-Identifier: GPL-3.0-or-later				#
@@ -55,6 +55,8 @@
 # Date		Author	Version	Description				#
 #									#
 # 11/02/2020	MG	1.0.1	Created.				#
+# 04/03/2021	MG	1.0.2	Prepend this package executable		#
+#				invocations with bindir.		#
 #									#
 #########################################################################
 
@@ -63,7 +65,7 @@
 # Init variables #
 ##################
 
-readonly version=1.0.1			# set version variable
+readonly version=1.0.2			# set version variable
 readonly packageversion=@pkgversion@	# Version of the complete package
 
 
@@ -177,6 +179,6 @@ proc_CL()
 
 proc_CL "$@"
 
-clamscan-notify.sh
+@bindir@/clamscan-notify.sh
 script_exit $?
 
