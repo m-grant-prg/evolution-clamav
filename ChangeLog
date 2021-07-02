@@ -1,3 +1,14 @@
+2021-07-02 v1.0.2 Mark Grant <m.grant.prg@gmail.com>
+	* at: Upgrade bootstrap.sh to v1.4.9
+	git: Add mailmap
+	git: Add gitattributes
+	Prepend own exec invocations with bindir
+	travis: Stop using Travis
+	actions: Initial build action setup
+	at: lxcu: Add lxc test build setup
+	travis: Bionic is the new minimum release
+	README: Correct git command
+
 2020-02-16 v1.0.1 Mark Grant <m.grant.prg@gmail.com>
 	* Initial release of this AutoTools project using
 	clamav-evolution 0.1.0 as the starting point.
