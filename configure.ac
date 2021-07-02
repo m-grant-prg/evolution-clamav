@@ -62,7 +62,7 @@ AC_PREREQ([2.69])
 # can be used by ac output and / or the sed setup below to substitute bookmarks
 # in source files.
 #
-AC_INIT(ClamAV Scanning For Evolution, 1.0.1+rc1,
+AC_INIT(ClamAV Scanning For Evolution, 1.0.2,
 	m.grant.prg@gmail.com, evolution-clamav)
 
 AC_MSG_NOTICE(initialisation and setup)
