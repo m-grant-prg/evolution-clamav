@@ -1,7 +1,7 @@
 #########################################################################
 #									#
 # Script ID: ./Makefile.am						#
-# Author: Copyright (C) 2020  Mark Grant				#
+# Author: Copyright (C) 2020, 2021  Mark Grant				#
 #									#
 # Released under the GPLv3 or later.					#
 # SPDX-License-Identifier: GPL-3.0-or-later				#
@@ -18,6 +18,7 @@
 # Date		Author	Version	Description				#
 #									#
 # 11/02/2020	MG	1.0.1	Initial version.			#
+# 08/11/2021	MG	1.0.2	Add misc directory to DIST.		#
 #									#
 #########################################################################
 
@@ -35,7 +36,7 @@ doc_DATA = AUTHORS ChangeLog COPYING NEWS README
 
 
 EXTRA_DIST = $(srcdir)/AUTHORS $(srcdir)/ChangeLog $(srcdir)/COPYING \
-		$(srcdir)/NEWS $(srcdir)/README
+		$(srcdir)/NEWS $(srcdir)/README $(srcdir)/misc
 
 
 srctarball:
