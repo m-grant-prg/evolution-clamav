@@ -13,10 +13,10 @@
 #	   Copyright (c) Fred Blaise.					#
 #	   Copyright (c) 2011 Christian Brenner.			#
 #	   Major rework.						#
-#	   Copyright (C) 2020  Mark Grant				#
+#	   Copyright (C) 2020, 2021  Mark Grant				#
 #									#
-# Released under the GPLv3 or later.					#
-# SPDX-License-Identifier: GPL-3.0-or-later				#
+# Released under the GPLv3 only.					#
+# SPDX-License-Identifier: GPL-3.0-only					#
 #									#
 # Purpose:								#
 # To simplify the AutoTools distribution build.				#
@@ -60,6 +60,7 @@
 # Date		Author	Version	Description				#
 #									#
 # 11/02/2020	MG	1.0.1	Created.				#
+# 23/11/2021	MG	1.0.2	Tighten SPDX tag.			#
 #									#
 #########################################################################
 
@@ -68,7 +69,7 @@
 # Init variables #
 ##################
 
-readonly version=1.0.1			# set version variable
+readonly version=1.0.2			# set version variable
 readonly packageversion=@pkgversion@	# Version of the complete package
 
 clam_cmd="clamscan "
