@@ -25,6 +25,7 @@
 # 14/10/2022    MG      1.0.3   Run on Focal 20.04                      #
 # 04/08/2023    MG      1.0.4   Remove txt2man, rely on txt2manwrap     #
 #                               dependencies.                           #
+#                               Run on jammy.                           #
 #									#
 #########################################################################
 
@@ -39,7 +40,7 @@ on:
 
 jobs:
   build-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       # Check-out the repository under $GITHUB_WORKSPACE.
