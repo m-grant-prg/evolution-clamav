@@ -1,3 +1,16 @@
+2023-08-04 v1.1.1 Mark Grant <m.grant.prg@gmail.com>
+	* at: Support ~ in version number
+	actions: Run on jammy
+	actions: Remove txt2man, rely on txt2manwrap dependencies
+	lxcu: Remove txt2man, rely on txt2manwrap dependencies
+	lxcu: Add in-file help text
+	at: Upgrade bootstrap.sh to v1.5.6
+	git: Update mailmap to v1.0.3
+	git: Update gitignore to v1.0.11
+	git: Update gitattributes to v1.0.4
+	editors: Update editorconfig to v1.0.4
+	at: Use AC_CONFIG_AUX_DIR
+
 2021-11-23 v1.0.3 Mark Grant <m.grant.prg@gmail.com>
 	* at: Add AC_COPYRIGHT macro
 	all: Tighten SPDX tags
