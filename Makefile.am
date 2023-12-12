@@ -1,6 +1,5 @@
 #########################################################################
 #									#
-# Script ID: ./Makefile.am						#
 # Author: Copyright (C) 2020, 2021, 2023  Mark Grant			#
 #									#
 # Released under the GPLv3 only.					#
@@ -8,19 +7,6 @@
 #									#
 # Purpose:								#
 # Automake script file to generate evolution-clamav project from source.#
-#									#
-#########################################################################
-
-#########################################################################
-#									#
-# Changelog								#
-#									#
-# Date		Author	Version	Description				#
-#									#
-# 11/02/2020	MG	1.0.1	Initial version.			#
-# 08/11/2021	MG	1.0.2	Add misc directory to DIST.		#
-# 23/11/2021	MG	1.0.3	Tighten SPDX tag.			#
-# 04/08/2023	MG	1.0.4	Enable use of v1.1.1~rc1 type vesrion	#
 #									#
 #########################################################################
 

@@ -1,6 +1,5 @@
 #########################################################################
 #									#
-# Script ID: ./configure.ac						#
 # Author: Copyright (C) 2020-2023  Mark Grant				#
 #									#
 # Released under the GPLv3 only.					#
@@ -17,7 +16,6 @@
 # None.									#
 #									#
 # Layout: (Only relevant sections will exist).				#
-# ChangeLog : High level ChangeLog					#
 # SECTION  1: Initialisation & Setup					#
 # SECTION  2: Architecture, target and host checks			#
 # SECTION  3: Command line arguments					#
@@ -36,24 +34,6 @@
 #									#
 #########################################################################
 
-#########################################################################
-#									#
-# Changelog								#
-#									#
-# Date		Author	Version	Description				#
-#									#
-# 11/02/2020	MG	1.0.1	Initial release.			#
-# 23/11/2021	MG	1.0.2	If git is available and we are inside a	#
-#				git tree then use git describe to add	#
-#				further package version information.	#
-#				Tighten SPDX tag.			#
-#				Add AC_COPYRIGHT macro.			#
-# 09/10/2022	MG	1.0.3	Separate AutoTools generated files from	#
-#				project root.				#
-# 04/08/2023	MG	1.0.4	Update Copyright for 2023.		#
-#									#
-#########################################################################
-
 
 #########################################
 #					#
@@ -65,7 +45,7 @@ AC_COPYRIGHT([Copyright (C) 2020-2023  Mark Grant
 	      This script is free to copy or distribute under the terms set out
 	      in the package license. See COPYING for details.])
 
-AC_REVISION([$Revision: 1.0.4 $])
+AC_REVISION([$Revision: 1.1.0 $])
 
 AC_PREREQ([2.69])
 

@@ -8,8 +8,7 @@
 
 #########################################################################
 #									#
-# Script ID: evolution-clamav.sh					#
-# Author: Copyright (C) 2020, 2021  Mark Grant				#
+# Author: Copyright (C) 2020, 2021, 2023  Mark Grant			#
 #									#
 # Released under the GPLv3 only.					#
 # SPDX-License-Identifier: GPL-3.0-only					#
@@ -48,25 +47,12 @@
 #									#
 #########################################################################
 
-#########################################################################
-#									#
-# Changelog								#
-#									#
-# Date		Author	Version	Description				#
-#									#
-# 11/02/2020	MG	1.0.1	Created.				#
-# 04/03/2021	MG	1.0.2	Prepend this package executable		#
-#				invocations with bindir.		#
-# 23/11/2021	MG	1.0.3	Tighten SPDX tag.			#
-#									#
-#########################################################################
-
 
 ##################
 # Init variables #
 ##################
 
-readonly version=1.0.3			# set version variable
+readonly version=1.1.0			# set version variable
 readonly packageversion=@pkgversion@	# Version of the complete package
 
 

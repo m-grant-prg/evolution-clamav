@@ -8,7 +8,6 @@
 
 #########################################################################
 #									#
-# Script ID: clamscan-notify.sh						#
 # Authors: Original script.						#
 #	   Copyright (c) Fred Blaise.					#
 #	   Copyright (c) 2011 Christian Brenner.			#
@@ -53,23 +52,12 @@
 #									#
 #########################################################################
 
-#########################################################################
-#									#
-# Changelog								#
-#									#
-# Date		Author	Version	Description				#
-#									#
-# 11/02/2020	MG	1.0.1	Created.				#
-# 23/11/2021	MG	1.0.2	Tighten SPDX tag.			#
-#									#
-#########################################################################
-
 
 ##################
 # Init variables #
 ##################
 
-readonly version=1.0.2			# set version variable
+readonly version=1.1.0			# set version variable
 readonly packageversion=@pkgversion@	# Version of the complete package
 
 clam_cmd="clamscan "

@@ -1,7 +1,6 @@
 #########################################################################
 #									#
-# Script ID: src/man/1/Makefile.am					#
-# Author: Copyright (C) 2020, 2021  Mark Grant				#
+# Author: Copyright (C) 2020, 2021, 2023  Mark Grant			#
 #									#
 # Released under the GPLv3 only.					#
 # SPDX-License-Identifier: GPL-3.0-only					#
@@ -9,17 +8,6 @@
 # Purpose:								#
 # Automake script file to generate evolution-clamav manual pages from	#
 # source.								#
-#									#
-#########################################################################
-
-#########################################################################
-#									#
-# Changelog								#
-#									#
-# Date		Author	Version	Description				#
-#									#
-# 11/02/2020	MG	1.0.1	Initial version.			#
-# 23/11/2021	MG	1.0.2	Tighten SPDX tag.			#
 #									#
 #########################################################################
 
