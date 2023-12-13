@@ -12,7 +12,7 @@
 #########################################################################
 
 
-evolution-clamav-scripts-location.sh.1: Makefile
+evolution-clamav-scripts-location.1: Makefile
 	mkdir -p $(@D)
 	rm -f $@ $@.tmp
 	$(edit) $(srcdir)/$(@F).man.in > $@.tmp
@@ -30,12 +30,12 @@ evolution-clamav-scripts-location.sh.1: Makefile
 	fi; \
 	txt2manwrap $(@F) $$section "" $@.tmp $@
 	rm -f $@.tmp
-evolution-clamav-scripts-location.sh.1: \
-	$(srcdir)/evolution-clamav-scripts-location.sh.1.man.in
+evolution-clamav-scripts-location.1: \
+	$(srcdir)/evolution-clamav-scripts-location.1.man.in
 
-man_MANS = evolution-clamav-scripts-location.sh.1
+man_MANS = evolution-clamav-scripts-location.1
 
-EXTRA_DIST = $(srcdir)/evolution-clamav-scripts-location.sh.1.man.in
+EXTRA_DIST = $(srcdir)/evolution-clamav-scripts-location.1.man.in
 
-CLEANFILES = *.tmp evolution-clamav-scripts-location.sh.1
+CLEANFILES = *.tmp evolution-clamav-scripts-location.1
 

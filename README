@@ -61,7 +61,7 @@ f) ... As root or sudo, type 'make install clean'
 g) ... Determine where the scripts have been installed. This can be discovered
 by typing:-
 
-	'evolution-clamav-scripts-location.sh'
+	'evolution-clamav-scripts-location'
 
 h) ... Open Evolution
 

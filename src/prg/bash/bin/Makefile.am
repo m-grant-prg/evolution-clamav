@@ -12,21 +12,21 @@
 #########################################################################
 
 
-evolution-clamav-scripts-location.sh: Makefile
+evolution-clamav-scripts-location: Makefile
 	mkdir -p $(@D)
 	rm -f $@ $@.tmp
 	test -f ./$@.in || srcdir=$(srcdir)/; \
-	$(edit) $${srcdir}$(@F).in > $@.tmp
+	$(edit) $${srcdir}$(@F).sh.in > $@.tmp
 	mv $@.tmp $@
 	chmod a+x $@
-evolution-clamav-scripts-location.sh: \
+evolution-clamav-scripts-location: \
 	$(srcdir)/evolution-clamav-scripts-location.sh.in
 
-bin_SCRIPTS = evolution-clamav-scripts-location.sh
+bin_SCRIPTS = evolution-clamav-scripts-location
 
 
 EXTRA_DIST = $(srcdir)/evolution-clamav-scripts-location.sh.in
 
 
-CLEANFILES = *.tmp evolution-clamav-scripts-location.sh
+CLEANFILES = *.tmp evolution-clamav-scripts-location
 

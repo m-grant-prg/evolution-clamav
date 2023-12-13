@@ -1,7 +1,7 @@
 #! @bashlocation@
 #########################################################################
 #									#
-#	evolution-clamav-scripts-location.sh is automatically generated,#
+#	evolution-clamav-scripts-location is automatically generated,	#
 #		please do not modify!					#
 #									#
 #########################################################################
@@ -17,7 +17,7 @@
 # A helper script which just outputs the location of the		#
 # evolution-clamv scripts.						#
 #									#
-# Syntax:	evolution-clamav-scripts-location.sh [ -h || --help ]	#
+# Syntax:	evolution-clamav-scripts-location [ -h || --help ]	#
 #					   || [ -V || --version ]	#
 #									#
 # Exit codes used:-							#

@@ -1,7 +1,7 @@
 NAME
-evolution-clamav-scripts-location.sh - A script location finding helper script
+evolution-clamav-scripts-location - A script location finding helper script
 SYNOPSIS
-evolution-clamav-scripts-location.sh [OPTION]
+evolution-clamav-scripts-location [OPTION]
 DESCRIPTION
 A helper script which merely outputs the location of the evolution-clamav
 scripts to stdout.
