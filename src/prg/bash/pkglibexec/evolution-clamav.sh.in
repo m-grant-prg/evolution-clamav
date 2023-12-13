@@ -1,24 +1,23 @@
 #! @bashlocation@
 #########################################################################
 #									#
-#	evolution-clamav-scripts-location.sh is automatically generated,#
+#	evolution-clamav.sh is automatically generated,			#
 #		please do not modify!					#
 #									#
 #########################################################################
 
 #########################################################################
 #									#
-# Author: Copyright (C) 2023  Mark Grant				#
+# Author: Copyright (C) 2020, 2021, 2023  Mark Grant			#
 #									#
 # Released under the GPLv3 only.					#
 # SPDX-License-Identifier: GPL-3.0-only					#
 #									#
 # Purpose:								#
-# A helper script which just outputs the location of the		#
-# evolution-clamv scripts.						#
+# To use as an Evolution filter to scan incoming mail using clamscan.	#
 #									#
-# Syntax:	evolution-clamav-scripts-location.sh [ -h || --help ]	#
-#					   || [ -V || --version ]	#
+# Syntax:	evolution-clamav.sh	[ -h || --help ] ||		#
+#					[ -V || --version ]		#
 #									#
 # Exit codes used:-							#
 # Bash standard Exit Codes:	0 - success				#
@@ -52,8 +51,9 @@
 ##################
 # Init variables #
 ##################
-readonly version=1.0.1				# Script version
-readonly packageversion=@pkgversion@		# Package version
+
+readonly version=1.1.0			# set version variable
+readonly packageversion=@pkgversion@	# Version of the complete package
 
 
 #############
@@ -66,10 +66,9 @@ readonly packageversion=@pkgversion@		# Package version
 usage ()
 {
 cat << EOF
-Usage is $0 [OPTIONS]
-	[OPTIONS] are:-
-	-h or --help Displays usage information
-	-V or --version Displays version information
+Usage:- evolution-clamav.sh [options]
+	-h or --help displays usage information
+	-V or --version displays version information
 EOF
 }
 
@@ -92,7 +91,7 @@ output()
 # No return value.
 script_exit()
 {
-	exit "$1"
+	exit $1
 }
 
 # Standard function to test command error and exit if non-zero.
@@ -101,15 +100,13 @@ script_exit()
 std_cmd_err_handler()
 {
 	if (( $1 )); then
-		script_exit "$1"
+		script_exit $1
 	fi
 }
 
 # Standard trap exit function.
 # No parameters.
 # No return value.
-# shellcheck disable=SC2317  # Do not warn about unreachable commands in trap
-# functions, they are legitimate.
 trap_exit()
 {
 	local -i exit_code=$?
@@ -117,10 +114,10 @@ trap_exit()
 
 	msg="Script terminating with exit code $exit_code due to trap received."
 	output "$msg" 1
-	script_exit "$exit_code"
+	script_exit $exit_code
 }
 
-# Setup trap.
+# Setup trap
 trap trap_exit SIGHUP SIGINT SIGQUIT SIGTERM
 
 # Process command line arguments with GNU getopt.
@@ -129,10 +126,11 @@ trap trap_exit SIGHUP SIGINT SIGQUIT SIGTERM
 proc_CL()
 {
 	local GETOPTTEMP
-	local tmpGETOPTTEMP
+	local tmp
 
-	tmpGETOPTTEMP="getopt -o hV --long help,version"
-	GETOPTTEMP=$($tmpGETOPTTEMP -n "$0" -- "$@")
+	tmp="getopt -o hV "
+	tmp+="--long help,version"
+	GETOPTTEMP=$($tmp -n "$0" -- "$@")
 	std_cmd_err_handler $?
 
 	eval set -- "$GETOPTTEMP"
@@ -159,12 +157,6 @@ proc_CL()
 			;;
 		esac
 	done
-
-	# Script does not accept other arguments.
-	if (( $# )); then
-		output "Invalid argument." 1
-		script_exit 64
-	fi
 }
 
 
@@ -174,7 +166,6 @@ proc_CL()
 
 proc_CL "$@"
 
-printf "@pkgdatadir@\n"
-
-script_exit 0
+@pkglibexecdir@/clamscan-notify.sh
+script_exit $?
 

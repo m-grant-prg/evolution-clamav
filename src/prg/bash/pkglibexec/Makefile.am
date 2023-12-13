@@ -6,13 +6,13 @@
 # SPDX-License-Identifier: GPL-3.0-only					#
 #									#
 # Purpose:								#
-# Automake script file to generate evolution-clamav scripts from source.#
+# Automake script file to generate evolution-clamav pkglibexec scripts	#
+# from source.								#
 #									#
 #########################################################################
 
 
-clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh \
-	evolution-clamav-scripts-location.sh: Makefile
+clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh: Makefile
 	mkdir -p $(@D)
 	rm -f $@ $@.tmp
 	test -f ./$@.in || srcdir=$(srcdir)/; \
@@ -22,18 +22,13 @@ clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh \
 clamscan-notify.sh: $(srcdir)/clamscan-notify.sh.in
 evolution-clamav.sh: $(srcdir)/evolution-clamav.sh.in
 evolution-clamavd.sh: $(srcdir)/evolution-clamavd.sh.in
-evolution-clamav-scripts-location.sh: \
-	$(srcdir)/evolution-clamav-scripts-location.sh.in
 
-bin_SCRIPTS = clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh \
-	evolution-clamav-scripts-location.sh
+pkglibexec_SCRIPTS = clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh
 
 
 EXTRA_DIST = $(srcdir)/clamscan-notify.sh.in $(srcdir)/evolution-clamav.sh.in \
-	$(srcdir)/evolution-clamavd.sh.in \
-	$(srcdir)/evolution-clamav-scripts-location.sh.in
+	$(srcdir)/evolution-clamavd.sh.in
 
 
-CLEANFILES = *.tmp clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh \
-	evolution-clamav-scripts-location.sh
+CLEANFILES = *.tmp clamscan-notify.sh evolution-clamav.sh evolution-clamavd.sh
 

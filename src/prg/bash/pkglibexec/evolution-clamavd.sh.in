@@ -1,7 +1,7 @@
 #! @bashlocation@
 #########################################################################
 #									#
-#	evolution-clamav.sh is automatically generated,			#
+#	evolution-clamavd.sh is automatically generated,		#
 #		please do not modify!					#
 #									#
 #########################################################################
@@ -14,9 +14,9 @@
 # SPDX-License-Identifier: GPL-3.0-only					#
 #									#
 # Purpose:								#
-# To use as an Evolution filter to scan incoming mail using clamscan.	#
+# To use as an Evolution filter to scan incoming mail using clamdscan.	#
 #									#
-# Syntax:	evolution-clamav.sh	[ -h || --help ] ||		#
+# Syntax:	evolution-clamavd.sh	[ -h || --help ] ||		#
 #					[ -V || --version ]		#
 #									#
 # Exit codes used:-							#
@@ -66,7 +66,7 @@ readonly packageversion=@pkgversion@	# Version of the complete package
 usage ()
 {
 cat << EOF
-Usage:- evolution-clamav.sh [options]
+Usage:- evolution-clamavd.sh [options]
 	-h or --help displays usage information
 	-V or --version displays version information
 EOF
@@ -166,6 +166,6 @@ proc_CL()
 
 proc_CL "$@"
 
-@bindir@/clamscan-notify.sh
+@pkglibexecdir@/clamscan-notify.sh --daemon
 script_exit $?
 

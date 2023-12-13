@@ -298,7 +298,8 @@ AC_MSG_NOTICE(processing output files)
 
 # Project Makefiles to create.
 AC_CONFIG_FILES([Makefile
-		src/prg/bash/Makefile
+		src/prg/bash/bin/Makefile
+		src/prg/bash/pkglibexec/Makefile
 		src/man/1/Makefile])
 
 AC_OUTPUT
