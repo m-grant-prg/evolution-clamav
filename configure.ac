@@ -8,8 +8,8 @@
 # Purpose:								#
 # Autoconfigure script file to configure evolution-clamav project.	#
 #									#
-# configure cmd line syntax:						#
-# ./configure								#
+# To get the configure cmd line syntax:-				#
+# ./configure --help							#
 #									#
 # Parameters generic description. For specifics to this configure.ac	#
 # please see inline comments at the point of definition:-		#
