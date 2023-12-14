@@ -6,7 +6,7 @@ Authors:-
 
 Copyright (C) 2011 Christian Brenner
 
-Copyright (C) 2020 Mark Grant
+Copyright (C) 2020, 2023 Mark Grant
 
 --------
 Contents
@@ -58,9 +58,10 @@ e) ... Type './configure'
 
 f) ... As root or sudo, type 'make install clean'
 
-g) ... Determine where the scripts have been installed. This will almost
-certainly be /usr/local/bin but can be discovered by typing
-'which evolution-clamav.sh'
+g) ... Determine where the scripts have been installed. This can be discovered
+by typing:-
+
+	'evolution-clamav-scripts-location'
 
 h) ... Open Evolution
 

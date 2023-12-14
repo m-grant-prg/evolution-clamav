@@ -12,7 +12,7 @@
 #########################################################################
 
 
-clamscan-notify.sh.1 evolution-clamav.sh.1 evolution-clamavd.sh.1: Makefile
+evolution-clamav-scripts-location.1: Makefile
 	mkdir -p $(@D)
 	rm -f $@ $@.tmp
 	$(edit) $(srcdir)/$(@F).man.in > $@.tmp
@@ -28,18 +28,14 @@ clamscan-notify.sh.1 evolution-clamav.sh.1 evolution-clamavd.sh.1: Makefile
 		echo "Source file suffix used as section but no dot & empty."; \
 		exit 1; \
 	fi; \
-	txt2manwrap $(@F) $$section "evolution-clamav Manual" $@.tmp $@
+	txt2manwrap $(@F) $$section "" $@.tmp $@
 	rm -f $@.tmp
-clamscan-notify.sh.1: $(srcdir)/clamscan-notify.sh.1.man.in
-evolution-clamav.sh.1: $(srcdir)/evolution-clamav.sh.1.man.in
-evolution-clamavd.sh.1: $(srcdir)/evolution-clamavd.sh.1.man.in
+evolution-clamav-scripts-location.1: \
+	$(srcdir)/evolution-clamav-scripts-location.1.man.in
 
-man_MANS = clamscan-notify.sh.1 evolution-clamav.sh.1 evolution-clamavd.sh.1
+man_MANS = evolution-clamav-scripts-location.1
 
-EXTRA_DIST = $(srcdir)/clamscan-notify.sh.1.man.in \
-	$(srcdir)/evolution-clamav.sh.1.man.in \
-	$(srcdir)/evolution-clamavd.sh.1.man.in
+EXTRA_DIST = $(srcdir)/evolution-clamav-scripts-location.1.man.in
 
+CLEANFILES = *.tmp evolution-clamav-scripts-location.1
 
-CLEANFILES = *.tmp clamscan-notify.sh.1 evolution-clamav.sh.1 \
-	evolution-clamavd.sh.1

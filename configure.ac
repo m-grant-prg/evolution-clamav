@@ -8,8 +8,8 @@
 # Purpose:								#
 # Autoconfigure script file to configure evolution-clamav project.	#
 #									#
-# configure cmd line syntax:						#
-# ./configure								#
+# To get the configure cmd line syntax:-				#
+# ./configure --help							#
 #									#
 # Parameters generic description. For specifics to this configure.ac	#
 # please see inline comments at the point of definition:-		#
@@ -298,7 +298,8 @@ AC_MSG_NOTICE(processing output files)
 
 # Project Makefiles to create.
 AC_CONFIG_FILES([Makefile
-		src/prg/bash/Makefile
+		src/prg/bash/bin/Makefile
+		src/prg/bash/pkglibexec/Makefile
 		src/man/1/Makefile])
 
 AC_OUTPUT
