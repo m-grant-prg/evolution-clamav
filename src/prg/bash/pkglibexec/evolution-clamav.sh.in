@@ -16,8 +16,7 @@
 # Purpose:								#
 # To use as an Evolution filter to scan incoming mail using clamscan.	#
 #									#
-# Syntax:	evolution-clamav.sh	[ -h || --help ] ||		#
-#					[ -V || --version ]		#
+# Syntax:	See usage().						#
 #									#
 # Exit codes used:-							#
 # Bash standard Exit Codes:	0 - success				#
@@ -63,10 +62,12 @@ readonly packageversion=@pkgversion@	# Version of the complete package
 # -h --help output.
 # No parameters
 # No return value
-usage ()
+usage()
 {
 cat << EOF
-Usage:- evolution-clamav.sh [options]
+Usage:- evolution-clamav.sh [{-h|-V}]
+Usage:- evolution-clamav.sh [OPTIONS]
+	[OPTIONS] are:-
 	-h or --help displays usage information
 	-V or --version displays version information
 EOF

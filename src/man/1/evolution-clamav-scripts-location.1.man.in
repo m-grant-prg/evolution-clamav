@@ -1,7 +1,8 @@
 NAME
 evolution-clamav-scripts-location - A script location finding helper script
 SYNOPSIS
-evolution-clamav-scripts-location [OPTION]
+evolution-clamav-scripts-location [{-h|-V}]
+evolution-clamav-scripts-location [OPTIONS]
 DESCRIPTION
 A helper script which merely outputs the location of the evolution-clamav
 scripts to stdout.

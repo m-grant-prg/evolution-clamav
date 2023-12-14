@@ -17,8 +17,7 @@
 # A helper script which just outputs the location of the		#
 # evolution-clamv scripts.						#
 #									#
-# Syntax:	evolution-clamav-scripts-location [ -h || --help ]	#
-#					   || [ -V || --version ]	#
+# Syntax:	See usage().						#
 #									#
 # Exit codes used:-							#
 # Bash standard Exit Codes:	0 - success				#
@@ -63,9 +62,10 @@ readonly packageversion=@pkgversion@		# Package version
 # -h --help output.
 # No parameters
 # No return value
-usage ()
+usage()
 {
 cat << EOF
+Usage is $0 [{-h|-V}]
 Usage is $0 [OPTIONS]
 	[OPTIONS] are:-
 	-h or --help Displays usage information

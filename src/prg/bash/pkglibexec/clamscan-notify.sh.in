@@ -12,17 +12,16 @@
 #	   Copyright (c) Fred Blaise.					#
 #	   Copyright (c) 2011 Christian Brenner.			#
 #	   Major rework.						#
-#	   Copyright (C) 2020, 2021  Mark Grant				#
+#	   Copyright (C) 2020, 2021, 2023  Mark Grant			#
 #									#
 # Released under the GPLv3 only.					#
 # SPDX-License-Identifier: GPL-3.0-only					#
 #									#
 # Purpose:								#
-# To simplify the AutoTools distribution build.				#
+# To cause stdin to be scanned by clamav in the foreground or via the	#
+# daemon.								#
 #									#
-# Syntax:	clamscan-notify.sh	[ -d || --daemon ] ||		#
-#					[ -h || --help ] ||		#
-#					[ -V || --version ]		#
+# Syntax:	See usage().						#
 #									#
 # Exit codes used:-							#
 # Bash standard Exit Codes:	0 - success				#
@@ -71,10 +70,12 @@ readonly tmpoutfile=/tmp/$$.$(basename $0).txt	# Temporary output file
 # -h --help output.
 # No parameters
 # No return value
-usage ()
+usage()
 {
 cat << EOF
-Usage:- clamscan-notify.sh [options]
+Usage:- clamscan-notify.sh [{-d|-h|-V}]
+Usage:- clamscan-notify.sh [OPTIONS]
+	[OPTIONS] are:-
 	-d or --daemon Use the clamav daemon instead of a foreground task
 	-h or --help displays usage information
 	-V or --version displays version information
