@@ -60,7 +60,7 @@ readonly version=1.1.0			# set version variable
 readonly packageversion=@pkgversion@	# Version of the complete package
 
 clam_cmd="clamscan "
-tmpoutfile=/tmp/$$.$(basename $0).txt	# Temporary output file
+tmpoutfile=/tmp/$$.$(basename "$0").txt	# Temporary output file
 readonly tmpoutfile
 
 
@@ -102,7 +102,7 @@ output()
 # No return value.
 script_exit()
 {
-	exit $1
+	exit "$1"
 }
 
 # Standard function to test command error and exit if non-zero.
@@ -111,7 +111,7 @@ script_exit()
 std_cmd_err_handler()
 {
 	if (( $1 )); then
-		script_exit $1
+		script_exit "$1"
 	fi
 }
 
@@ -125,7 +125,7 @@ trap_exit()
 
 	msg="Script terminating with exit code $exit_code due to trap received."
 	output "$msg" 1
-	script_exit $exit_code
+	script_exit "$exit_code"
 }
 
 # Setup trap
@@ -186,15 +186,15 @@ clam_cmd+="--official-db-only=yes - 1>$tmpoutfile"
 
 eval "$clam_cmd"
 if [[ $? == 1 ]]; then
-	error_string=$(grep "FOUND" $tmpoutfile | cut -d: -f2)
+	error_string=$(grep "FOUND" "$tmpoutfile" | cut -d: -f2)
 	cmd="notify-send --urgency=critical --category=email.bounced "
 	cmd+="--icon=/usr/share/icons/gnome/256x256/status/dialog-warning.png "
 	cmd+="\"ClamAV: Virus detected\" \"$error_string\""
-	eval $cmd
-	rm $tmpoutfile
+	eval "$cmd"
+	rm "$tmpoutfile"
 	script_exit 1
 fi
 
-rm $tmpoutfile
+rm "$tmpoutfile"
 script_exit 0
 
