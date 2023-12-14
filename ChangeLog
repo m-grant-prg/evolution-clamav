@@ -1,3 +1,23 @@
+2023-12-14 v1.1.2 Mark Grant <m.grant.prg@gmail.com>
+	* Merge branch 'libexec' into tip
+	pkglibexec: Fix Unreachable code warning
+	pkglibexec: Fix Double quote to prevent globbing etc
+	pkglibexec: Fix declare and assign seperately warning
+	bash: Trivial whitespace adjustment
+	bash: man: Update CL syntax
+	at: Improve configure CL sysntax description
+	all: Drop.sh extension from scripts in $PATH
+	all: Move non-user scripts to pkglibexecdir
+	bash: Add script location output script
+	bash: Add script location output script
+	git: Standardise on gitignore format
+	all: Remove most in-file ChangeLogs and versioningtip
+	at: Upgrade bootstrap.sh to v1.6.0
+	at: Upgrade bootstrap.sh to v1.5.7
+	Merge pull request #1 from m-grant-prg/dependabot/github_actions/actions/checkout-4
+	build(deps): bump actions/checkout from 2 to 4
+	github: Add dependabot version update config
+
 2023-08-04 v1.1.1 Mark Grant <m.grant.prg@gmail.com>
 	* at: Support ~ in version number
 	actions: Run on jammy

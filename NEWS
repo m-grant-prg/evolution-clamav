@@ -1,3 +1,8 @@
+Release 1.1.2 2023-12-14
+Scripts moved to pkglibexecdir.
+Script location helper in bindir/evolution-clamav-scripts-location
+For technical changes please refer to the ChangeLog.
+
 Release 1.1.1 2023-08-04
 No user visible changes.
 For technical changes please refer to the ChangeLog.
