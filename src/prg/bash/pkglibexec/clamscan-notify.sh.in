@@ -56,10 +56,11 @@
 # Init variables #
 ##################
 
-readonly version=1.1.0			# set version variable
+readonly version=1.1.1			# set version variable
 readonly packageversion=@pkgversion@	# Version of the complete package
 
-clam_cmd="clamscan "
+clam_cmd="clamscan --detect-pua=yes --detect-structured=yes"
+clam_cmd+=" --official-db-only=yes"
 tmpoutfile=/tmp/$$.$(basename "$0").txt	# Temporary output file
 readonly tmpoutfile
 
@@ -152,7 +153,7 @@ proc_CL()
 	while true; do
 		case "$1" in
 		-d|--daemon)
-			clam_cmd="clamdscan "
+			clam_cmd="clamdscan"
 			shift
 			;;
 		-h|--help)
@@ -183,9 +184,7 @@ proc_CL()
 
 proc_CL "$@"
 
-clam_cmd+="--no-summary --detect-pua=yes --detect-structured=yes "
-clam_cmd+="--official-db-only=yes - 1>$tmpoutfile"
-
+clam_cmd+=" --no-summary - 1>$tmpoutfile"
 eval "$clam_cmd"
 if [[ $? == 1 ]]; then
 	error_string=$(grep "FOUND" "$tmpoutfile" | cut -d: -f2)
