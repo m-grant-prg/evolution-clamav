@@ -71,18 +71,20 @@ j) ... Click "Add"
 
 k) ... Apply following settings:
 
-		k.1) Rule Name: ClamAV (or anything else)
-		k.2) Click "Add Condition"
-		k.3) Select "Pipe to Program"
-		k.4) Then using the location determined in g), either:
+		k.1) Select Incoming
+		k.2) Rule Name: ClamAV - Incoming (or anything else)
+		k.3) Click "Add Condition"
+		k.4) Select "Pipe to Program"
+		k.5) Then using the location determined in g), either:
 			Select the evolution-clamav.sh file for foreground
 			scanning
 			or
 			Select the evolution-clamavd.sh file to use the daemon
-		k.5) Select "does not return"
-		k.6) Enter "0"
-		k.7) Click "Add Action"
-		k.8) Choose "Delete"
+		k.6) Select "returns greater than"
+		k.7) Enter "0"
+		k.8) Click "Add Action"
+		k.9) Choose "Delete" or "Move to Folder" and a quarantine folder
+		k.10) Repeat k for an Outgoing filter
 
 l) ... Click "OK"
 
